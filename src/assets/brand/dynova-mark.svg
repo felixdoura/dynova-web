@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Dynova mark">
+  <rect width="120" height="120" fill="#0A0A0A"></rect>
+  <text x="60" y="86" text-anchor="middle" fill="#FAFAFA" font-family="DM Sans, system-ui, sans-serif" font-weight="900" font-size="84" letter-spacing="-0.04em">D</text>
+  <rect x="86" y="68" width="14" height="14" fill="#F2FF00"></rect>
+</svg>

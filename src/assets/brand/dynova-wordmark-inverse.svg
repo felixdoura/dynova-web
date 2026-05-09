@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" role="img" aria-label="Dynova on yellow">
+  <rect width="480" height="120" fill="#F2FF00"></rect>
+  <text x="32" y="84" fill="#0A0A0A" font-family="DM Sans, system-ui, sans-serif" font-weight="900" font-size="72" letter-spacing="-0.04em">DYNOVA</text>
+  <rect x="380" y="64" width="20" height="20" fill="#0A0A0A"></rect>
+</svg>

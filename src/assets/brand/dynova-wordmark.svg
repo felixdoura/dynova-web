@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" role="img" aria-label="Dynova">
+  <defs>
+    
+  </defs>
+  <rect class="dyn-mark-bg" width="480" height="120"></rect>
+  <text class="dyn-mark-fg" x="32" y="84" font-size="72">DYNOVA</text>
+  <rect class="dyn-mark-dot" x="380" y="64" width="20" height="20"></rect>
+</svg>
