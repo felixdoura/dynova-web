@@ -1,119 +1,38 @@
-/* Estilos de la pantalla de validación.
-   Todo apoyado en las variables del design system.
-   Este archivo desaparece cuando armemos el layout real. */
+/* Estilos temporales de placeholders.
+   Cada sección los va reemplazando con su CSS propio en los pasos 3-7. */
 
-.setup-check {
-  min-height: 100vh;
+.placeholder {
+  padding-block: var(--space-9);
+  min-height: 70vh;
   display: flex;
   align-items: center;
-  padding-block: var(--space-9);
-  /* Spotlight gradient sutil — el "void con luz" de la marca */
+  border-bottom: 1px solid var(--border-1);
+}
+
+.placeholder--alt {
+  background: var(--bg-1);
+}
+
+.placeholder--hero {
+  min-height: calc(100vh - 64px);
   background:
     radial-gradient(
-      circle at 70% 20%,
+      circle at 70% 30%,
       var(--dyn-yellow-glow) 0%,
-      transparent 45%
+      transparent 50%
     ),
     var(--bg-canvas);
 }
 
-.setup-check__wordmark {
-  width: 220px;
-  height: auto;
-  margin-block: var(--space-5) var(--space-7);
+.placeholder__title {
+  margin-block: var(--space-4) 0;
 }
 
-.setup-check__headline {
-  max-width: 16ch;
-  margin-block: 0 var(--space-5);
-}
-
-.setup-check__hl {
+.placeholder__hl {
   color: var(--dyn-yellow);
 }
 
-.setup-check__lead {
+.placeholder__lead {
   max-width: 60ch;
-  margin-block: 0 var(--space-7);
-}
-
-.setup-check__actions {
-  display: flex;
-  gap: var(--space-4);
-  flex-wrap: wrap;
-  margin-bottom: var(--space-9);
-}
-
-/* CTA primario — pill + glow amarillo, la firma de elevación de la marca */
-.setup-check__cta {
-  background: var(--dyn-yellow);
-  color: var(--fg-on-yellow);
-  font-weight: var(--fw-semibold);
-  font-size: var(--fs-14);
-  letter-spacing: var(--tracking-wider);
-  text-transform: uppercase;
-  padding: 14px 28px;
-  border-radius: var(--radius-pill);
-  box-shadow: var(--glow-yellow);
-  transition:
-    background var(--dur-fast) var(--ease-snap),
-    box-shadow var(--dur-base) var(--ease-snap),
-    transform var(--dur-fast) var(--ease-snap);
-}
-.setup-check__cta:hover {
-  background: var(--dyn-yellow-hot);
-  box-shadow: var(--glow-yellow-strong);
-}
-.setup-check__cta:active {
-  transform: scale(0.98);
-}
-
-/* Botón ghost — borde hairline, esquina pequeña, no pill */
-.setup-check__ghost {
-  border: 1px solid var(--border-1);
-  color: var(--fg-1);
-  font-weight: var(--fw-medium);
-  font-size: var(--fs-14);
-  letter-spacing: var(--tracking-wider);
-  text-transform: uppercase;
-  padding: 14px 28px;
-  border-radius: var(--radius-sm);
-  transition:
-    border-color var(--dur-base) var(--ease-snap),
-    color var(--dur-base) var(--ease-snap);
-}
-.setup-check__ghost:hover {
-  border-color: var(--dyn-yellow);
-  color: var(--dyn-yellow);
-}
-
-/* Swatches — chequeo visual de la rampa neutral + el acento */
-.setup-check__swatches {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: var(--space-3);
-}
-.setup-check__swatches li {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  padding: var(--space-3);
-  background: var(--bg-1);
-  border: 1px solid var(--border-1);
-  border-radius: var(--radius-md);
-}
-.setup-check__swatches span {
-  width: 32px;
-  height: 32px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border-1);
-  flex-shrink: 0;
-}
-.setup-check__swatches code {
-  font-family: var(--font-mono);
-  font-size: var(--fs-13);
-  color: var(--fg-2);
+  margin-top: var(--space-5);
 }

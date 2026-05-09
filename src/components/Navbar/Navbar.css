@@ -1,0 +1,196 @@
+/* =============================================================
+   NAVBAR
+   Sticky, transparente al inicio, blur sutil al hacer scroll.
+   ============================================================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding-block: var(--space-4);
+  transition: background var(--dur-base) var(--ease-snap),
+              backdrop-filter var(--dur-base) var(--ease-snap),
+              border-color var(--dur-base) var(--ease-snap);
+  border-bottom: 1px solid transparent;
+}
+
+/* Estado scrolled: fondo translúcido + hairline border */
+.navbar--scrolled {
+  background: var(--bg-overlay);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom-color: var(--border-1);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+/* ---------- Brand / wordmark ---------- */
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-right: auto; /* empuja todo lo demás a la derecha en desktop */
+  transition: opacity var(--dur-fast) var(--ease-snap);
+}
+.navbar__brand:hover {
+  opacity: 0.85;
+}
+.navbar__wordmark {
+  height: 28px;
+  width: auto;
+}
+
+/* ---------- Nav desktop ---------- */
+.navbar__nav {
+  display: none;
+}
+
+.navbar__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: var(--space-6);
+}
+
+.navbar__link {
+  font-family: var(--font-sans);
+  font-size: var(--fs-14);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--fg-2);
+  position: relative;
+  padding-block: 4px;
+  transition: color var(--dur-base) var(--ease-snap);
+}
+
+/* Underline reveal amarillo — la motion-firma de la marca */
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: var(--dyn-yellow);
+  transition: width var(--dur-base) var(--ease-snap);
+}
+.navbar__link:hover {
+  color: var(--fg-1);
+}
+.navbar__link:hover::after {
+  width: 100%;
+}
+
+/* ---------- CTA ---------- */
+.navbar__cta {
+  display: none; /* visible solo en desktop, en mobile va dentro del drawer */
+  background: var(--dyn-yellow);
+  color: var(--fg-on-yellow);
+  font-family: var(--font-sans);
+  font-size: var(--fs-13);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: var(--radius-pill);
+  transition:
+    background var(--dur-fast) var(--ease-snap),
+    box-shadow var(--dur-base) var(--ease-snap),
+    transform var(--dur-fast) var(--ease-snap);
+}
+.navbar__cta:hover {
+  background: var(--dyn-yellow-hot);
+  box-shadow: var(--glow-yellow);
+}
+.navbar__cta:active {
+  transform: scale(0.98);
+}
+
+/* ---------- Toggle mobile ---------- */
+.navbar__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--fg-1);
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  transition: color var(--dur-fast) var(--ease-snap);
+}
+.navbar__toggle:hover {
+  color: var(--dyn-yellow);
+}
+
+/* ---------- Drawer mobile ---------- */
+.navbar__drawer {
+  position: fixed;
+  top: 64px; /* debajo del navbar */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg-canvas);
+  padding: var(--space-7) var(--container-pad);
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform var(--dur-slow) var(--ease-snap),
+    opacity var(--dur-base) var(--ease-snap);
+  z-index: 99;
+}
+.navbar__drawer--open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.navbar__drawer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.navbar__drawer-link {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: var(--fs-32);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-1);
+  padding-block: var(--space-2);
+  transition: color var(--dur-fast) var(--ease-snap);
+}
+.navbar__drawer-link:hover {
+  color: var(--dyn-yellow);
+}
+
+.navbar__cta--mobile {
+  display: inline-block;
+  margin-top: var(--space-5);
+  padding: 16px 32px;
+  font-size: var(--fs-14);
+}
+
+/* ---------- Responsive: desktop ≥ 768px ---------- */
+@media (min-width: 768px) {
+  .navbar__nav {
+    display: block;
+  }
+  .navbar__cta {
+    display: inline-block;
+  }
+  .navbar__toggle,
+  .navbar__drawer {
+    display: none;
+  }
+}

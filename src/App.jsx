@@ -1,56 +1,66 @@
-import wordmark from './assets/brand/dynova-wordmark-inverse.svg'
+import Layout from './components/Layout/Layout'
 import './App.css'
 
 /**
- * Pantalla de validación del design system.
- * Sirve para confirmar visualmente que cargan:
- *  - Tokens de color (canvas negro, amarillo neón)
- *  - Tipografía (DM Sans + DM Mono desde Google Fonts)
- *  - Logos
- *  - Glow amarillo (la "elevation" de la marca)
- *
+ * App — root. Por ahora monta el Layout con placeholders del Home.
+ * En los próximos pasos vamos a reemplazar el contenido por las secciones reales:
+ *   - Hero (Paso 3)
+ *   - Servicios (Paso 4)
+ *   - Manifiesto (Paso 5)
+ *   - Casos (Paso 6)
+ *   - Contacto (Paso 7)
  */
 function App() {
   return (
-    <main className="setup-check">
-      <div className="dyn-container">
+    <Layout>
 
-        <p className="dyn-eyebrow">SETUP / 01 · TOKENS CHECK</p>
-
-        <img
-          src={wordmark}
-          alt="Dynova"
-          className="setup-check__wordmark"
-        />
-
-        <h1 className="dyn-h1 setup-check__headline">
-          Donde tu marca <span className="setup-check__hl">rompe</span> límites.
-        </h1>
-
-        <p className="dyn-lead setup-check__lead">
-          Si estás viendo el negro profundo, el amarillo neón sobre el botón,
-          y la tipografía DM Sans, los tokens del design system cargaron bien.
-        </p>
-
-        <div className="setup-check__actions">
-          <button className="setup-check__cta">
-            Empezar
-          </button>
-          <button className="setup-check__ghost">
-            Ver paleta
-          </button>
+      <section className="placeholder placeholder--hero" id="hero">
+        <div className="dyn-container">
+          <p className="dyn-eyebrow">/ Paso 02 · Layout listo</p>
+          <h1 className="dyn-h1 placeholder__title">
+            Acá va el <span className="placeholder__hl">Hero</span>.
+          </h1>
+          <p className="dyn-lead placeholder__lead">
+            En esta parte va la sección hero. Hay que probar algunas cosas todavía, uno de 
+            los puntos es que hay que probar es que cuando se hace el scroll la barra superior
+            desaparezca o difumine, también probar el comportamiento en dispositivos móviles.
+          </p>
         </div>
+      </section>
 
-        <ul className="setup-check__swatches">
-          <li><span style={{ background: 'var(--dyn-black)' }} /> <code>--dyn-black</code></li>
-          <li><span style={{ background: 'var(--dyn-coal)' }} /> <code>--dyn-coal</code></li>
-          <li><span style={{ background: 'var(--dyn-iron)' }} /> <code>--dyn-iron</code></li>
-          <li><span style={{ background: 'var(--dyn-yellow)' }} /> <code>--dyn-yellow</code></li>
-          <li><span style={{ background: 'var(--dyn-white)' }} /> <code>--dyn-white</code></li>
-        </ul>
+      <section className="placeholder placeholder--alt" id="servicios">
+        <div className="dyn-container">
+          <p className="dyn-eyebrow">/ Sección</p>
+          <h2 className="dyn-h2 placeholder__title">Servicios</h2>
+          <p className="dyn-lead placeholder__lead">(Paso 4)</p>
+        </div>
+      </section>
 
-      </div>
-    </main>
+      <section className="placeholder" id="manifiesto">
+        <div className="dyn-container">
+          <p className="dyn-eyebrow">/ Sección</p>
+          <h2 className="dyn-h2 placeholder__title">Manifiesto</h2>
+          <p className="dyn-lead placeholder__lead">(Paso 5)</p>
+        </div>
+      </section>
+
+      <section className="placeholder placeholder--alt" id="casos">
+        <div className="dyn-container">
+          <p className="dyn-eyebrow">/ Sección</p>
+          <h2 className="dyn-h2 placeholder__title">Casos</h2>
+          <p className="dyn-lead placeholder__lead">(Paso 6)</p>
+        </div>
+      </section>
+
+      <section className="placeholder" id="contacto">
+        <div className="dyn-container">
+          <p className="dyn-eyebrow">/ Sección</p>
+          <h2 className="dyn-h2 placeholder__title">Contacto</h2>
+          <p className="dyn-lead placeholder__lead">(Paso 7)</p>
+        </div>
+      </section>
+
+    </Layout>
   )
 }
 
